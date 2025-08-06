@@ -1,8 +1,8 @@
 package com.project.project.services;
 
 import com.project.project.DTOs.UserDTO;
-import com.project.project.Enums.Role;
-import com.project.project.Models.User;
+import com.project.project.enums.Role;
+import com.project.project.models.User;
 import com.project.project.repositories.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;

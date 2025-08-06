@@ -1,6 +1,6 @@
-package com.project.project.Models;
+package com.project.project.models;
 
-import com.project.project.Enums.Category;
+import com.project.project.enums.Category;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;

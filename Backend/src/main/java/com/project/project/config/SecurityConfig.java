@@ -1,6 +1,6 @@
 package com.project.project.config;
 
-import com.project.project.Models.User;
+import com.project.project.models.User;
 import com.project.project.filters.JwtFilter;
 import com.project.project.repositories.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +44,7 @@ public class SecurityConfig {
                 .httpBasic(Customizer.withDefaults())
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .authenticationProvider(authenticationProvider()) // ✅ THIS LINE IS MISSING
+                .authenticationProvider(authenticationProvider())
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
     }
