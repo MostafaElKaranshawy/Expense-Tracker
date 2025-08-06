@@ -69,4 +69,9 @@ public class JwtService {
         tokenObject.setToken(token);
         return tokenObject;
     }
+
+    public int extractUserIdFromToken(String token) {
+        Token tokenObject = extractAllClaims(token);
+        return tokenObject.getUserId();
+    }
 }
