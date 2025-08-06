@@ -1,4 +1,4 @@
-package com.project.project.Models;
+package com.project.project.Enums;
 
 public enum Role {
     ADMIN,
