@@ -1,0 +1,51 @@
+package com.project.project.services;
+
+import com.project.project.Models.User;
+import com.project.project.repositories.UserRepo;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
+
+@Service
+public class AuthService {
+    @Autowired
+    private UserRepo userRepo;
+
+    @Autowired
+    AuthenticationManager authManager;
+
+    @Autowired
+    JwtService jwtService;
+
+    private BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder(12);
+
+    public User register(User user) {
+        if (userRepo.existsByUsername(user.getUsername())) {
+            throw new IllegalArgumentException("User already exists");
+        }
+        String hashedPassword = bCryptPasswordEncoder.encode(user.getPassword());
+        user.setPassword(hashedPassword);
+        return userRepo.save(user);
+    }
+
+    // return token
+    public String login(String username, String password) {
+        Authentication authentication = authManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
+        if(authentication.isAuthenticated()) {
+            SecurityContextHolder.getContext().setAuthentication(authentication);
+            User user = userRepo.findByUsername(username)
+                    .orElseThrow(() -> new IllegalArgumentException("User not found"));
+            System.out.println("Hello " + user.getUsername() + ", you are logged in successfully!");
+            String token = JwtService.generateToken(user);
+            System.out.println("Generated Token: " + token);
+            return token;
+        }
+        else {
+            throw new IllegalArgumentException("Invalid credentials");
+        }
+    }
+}
