@@ -46,6 +46,7 @@ public class JwtFilter extends OncePerRequestFilter {
                         userDetails, null, userDetails.getAuthorities());
                 SecurityContextHolder.getContext().setAuthentication(authentication);
                 System.out.println("Token is valid for user: " + userName);
+                request.getSession().setAttribute("user", userDetails);
             }
             System.out.println("Processing request for user: " + userName);
         }

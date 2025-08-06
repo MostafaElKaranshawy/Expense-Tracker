@@ -25,10 +25,11 @@ public class JwtService {
 
     public static String generateToken(User user) {
         Map<String, Object> claims = new HashMap<>();
+        claims.put("userId", user.getId());
+        claims.put("username", user.getUsername());
         return Jwts.builder()
                 .claims()
                 .add(claims)
-                .subject(user.getUsername())
                 .issuedAt(new Date(System.currentTimeMillis()))
                 .expiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 )) // 1 hour
                 .and()
@@ -60,8 +61,9 @@ public class JwtService {
                 .parseClaimsJws(token)
                 .getBody();
         Token tokenObject = new Token();
-        tokenObject.setUsername((String) claims.get("sub"));
-        long expTimestamp = ((Number) claims.get("exp")).longValue(); // cast safely
+        tokenObject.setUserId((Integer) claims.get("userId"));
+        tokenObject.setUsername((String) claims.get("username"));
+        long expTimestamp = ((Number) claims.get("exp")).longValue();
         Date expirationDate = new Date(expTimestamp * 1000); // convert seconds → millis
         tokenObject.setExpiration(expirationDate);
         tokenObject.setToken(token);
