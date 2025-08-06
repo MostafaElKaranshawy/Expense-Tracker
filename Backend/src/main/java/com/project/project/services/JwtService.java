@@ -17,12 +17,14 @@ import java.util.Map;
 @Service
 public class JwtService {
 
-    @Value("${jwt.secret}")
-    static String SECRET_KEY ;
+    static String SECRET_KEY;
+
+    public JwtService(@Value("${jwt.secret}") String secretKey) {
+        SECRET_KEY = secretKey;
+    }
 
     public static String generateToken(User user) {
         Map<String, Object> claims = new HashMap<>();
-
         return Jwts.builder()
                 .claims()
                 .add(claims)

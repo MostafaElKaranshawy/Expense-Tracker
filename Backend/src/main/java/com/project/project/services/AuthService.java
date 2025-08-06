@@ -1,5 +1,7 @@
 package com.project.project.services;
 
+import com.project.project.DTOs.UserDTO;
+import com.project.project.Enums.Role;
 import com.project.project.Models.User;
 import com.project.project.repositories.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,20 +31,25 @@ public class AuthService {
         }
         String hashedPassword = bCryptPasswordEncoder.encode(user.getPassword());
         user.setPassword(hashedPassword);
+        user.setRole(Role.USER);
         return userRepo.save(user);
     }
 
     // return token
-    public String login(String username, String password) {
+    public UserDTO login(String username, String password) {
         Authentication authentication = authManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
         if(authentication.isAuthenticated()) {
             SecurityContextHolder.getContext().setAuthentication(authentication);
             User user = userRepo.findByUsername(username)
                     .orElseThrow(() -> new IllegalArgumentException("User not found"));
-            System.out.println("Hello " + user.getUsername() + ", you are logged in successfully!");
+            if(user == null)
+                throw new IllegalArgumentException("User not found");
             String token = JwtService.generateToken(user);
             System.out.println("Generated Token: " + token);
-            return token;
+            UserDTO userDTO = new UserDTO();
+            userDTO.setToken(token);
+            userDTO.setUser(user);
+            return userDTO;
         }
         else {
             throw new IllegalArgumentException("Invalid credentials");
