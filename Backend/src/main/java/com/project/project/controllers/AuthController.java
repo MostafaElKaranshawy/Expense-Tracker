@@ -1,5 +1,6 @@
 package com.project.project.controllers;
 
+import com.project.project.DTOs.UserDTO;
 import com.project.project.Models.User;
 import com.project.project.services.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,8 +31,8 @@ public class AuthController {
     @GetMapping("/auth/login")
     public ResponseEntity<?> login(@RequestBody User user) {
         try {
-            String token = authService.login(user.getUsername(), user.getPassword());
-            return new ResponseEntity<>(token, HttpStatus.OK);
+            UserDTO userDTO = authService.login(user.getUsername(), user.getPassword());
+            return new ResponseEntity<>(userDTO, HttpStatus.OK);
         }
         catch (Exception e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
