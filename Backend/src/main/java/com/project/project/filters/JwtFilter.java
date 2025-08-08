@@ -1,6 +1,6 @@
 package com.project.project.filters;
 
-import com.project.project.Models.User;
+import com.project.project.models.User;
 import com.project.project.repositories.UserRepo;
 import com.project.project.services.JwtService;
 import jakarta.servlet.FilterChain;

@@ -1,4 +1,4 @@
-package com.project.project.Enums;
+package com.project.project.enums;
 
 public enum Category {
     FOOD,

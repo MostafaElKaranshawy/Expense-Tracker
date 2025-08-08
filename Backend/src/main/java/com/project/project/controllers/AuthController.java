@@ -1,7 +1,7 @@
 package com.project.project.controllers;
 
 import com.project.project.DTOs.UserDTO;
-import com.project.project.Models.User;
+import com.project.project.models.User;
 import com.project.project.services.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

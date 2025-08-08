@@ -1,13 +1,19 @@
 package com.project.project.services;
 
-import com.project.project.Models.Token;
-import com.project.project.Models.User;
+import com.project.project.models.Token;
+import com.project.project.models.User;
+import com.project.project.repositories.UserRepo;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import jakarta.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.security.Key;
 import java.util.Date;
@@ -18,6 +24,9 @@ import java.util.Map;
 public class JwtService {
 
     static String SECRET_KEY;
+
+    @Autowired
+    private UserRepo userRepository;
 
     public JwtService(@Value("${jwt.secret}") String secretKey) {
         SECRET_KEY = secretKey;
@@ -70,8 +79,21 @@ public class JwtService {
         return tokenObject;
     }
 
+
+    public int extractUserIdFromRequest(HttpServletRequest request)  {
+        return (Integer) request.getSession().getAttribute("userId");
+    }
     public int extractUserIdFromToken(String token) {
         Token tokenObject = extractAllClaims(token);
         return tokenObject.getUserId();
+    }
+
+    public User getAuthenticatedUser(HttpServletRequest request) {
+        int userId = extractUserIdFromRequest(request);
+        if (userId == -1) {
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Unauthorized");
+        }
+        return userRepository.findById(userId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.UNAUTHORIZED, "User not found"));
     }
 }
