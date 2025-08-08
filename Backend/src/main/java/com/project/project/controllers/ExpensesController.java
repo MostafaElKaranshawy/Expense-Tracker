@@ -1,11 +1,14 @@
 package com.project.project.controllers;
 
+import com.project.project.DTOs.ExpenseDTO;
+import com.project.project.adapters.ExpensesAndDTOAdapter;
 import com.project.project.enums.Category;
 import com.project.project.models.Expense;
 import com.project.project.models.User;
 import com.project.project.repositories.UserRepo;
 import com.project.project.services.ExpensesService;
 import com.project.project.services.JwtService;
+import com.project.project.services.LocalizationService;
 import jakarta.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Locale;
 
 @RestController
 @RequestMapping("/api/expenses")
@@ -37,13 +41,15 @@ public class ExpensesController {
     @Autowired
     private UserRepo userRepository;
 
+    @Autowired
+    private ExpensesAndDTOAdapter expensesAdapter;
 
     @PostMapping
-    public ResponseEntity<Expense> createExpense(@RequestBody Expense expense, HttpServletRequest request) {
+    public ResponseEntity<ExpenseDTO> createExpense(@RequestBody Expense expense, HttpServletRequest request, Locale locale) {
         User currentUser = jwtService.getAuthenticatedUser(request);
         expense.setUser(currentUser);
         Expense created = expensesService.createExpense(expense);
-        return ResponseEntity.status(HttpStatus.CREATED).body(created);
+        return ResponseEntity.status(HttpStatus.CREATED).body(expensesAdapter.toDTO(created));
     }
 
     @GetMapping
