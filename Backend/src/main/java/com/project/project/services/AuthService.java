@@ -5,6 +5,7 @@ import com.project.project.enums.Role;
 import com.project.project.models.User;
 import com.project.project.repositories.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -23,11 +24,15 @@ public class AuthService {
     @Autowired
     JwtService jwtService;
 
+    @Autowired
+    private LocalizationService localizationService;
+
     private BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder(12);
 
     public User register(User user) {
         if (userRepo.existsByUsername(user.getUsername())) {
-            throw new IllegalArgumentException("User already exists");
+            throw new IllegalArgumentException(localizationService.getMessage("user.already.exists",
+                    LocaleContextHolder.getLocale()));
         }
         String hashedPassword = bCryptPasswordEncoder.encode(user.getPassword());
         user.setPassword(hashedPassword);
