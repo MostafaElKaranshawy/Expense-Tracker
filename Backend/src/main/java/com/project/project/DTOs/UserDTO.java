@@ -1,6 +1,6 @@
 package com.project.project.DTOs;
 
-import com.project.project.Models.User;
+import com.project.project.models.User;
 import org.springframework.stereotype.Component;
 
 @Component

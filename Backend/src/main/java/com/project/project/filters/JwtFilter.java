@@ -1,6 +1,6 @@
 package com.project.project.filters;
 
-import com.project.project.Models.User;
+import com.project.project.models.User;
 import com.project.project.repositories.UserRepo;
 import com.project.project.services.JwtService;
 import jakarta.servlet.FilterChain;
@@ -64,7 +64,7 @@ public class JwtFilter extends OncePerRequestFilter {
             return org.springframework.security.core.userdetails.User.builder()
                     .username(user.getUsername())
                     .password(user.getPassword())
-                    .roles("USER") // adjust role if needed
+                    .roles(user.getRole().name())
                     .build();
         };
     }

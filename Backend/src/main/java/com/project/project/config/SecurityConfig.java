@@ -1,6 +1,6 @@
 package com.project.project.config;
 
-import com.project.project.Models.User;
+import com.project.project.models.User;
 import com.project.project.filters.JwtFilter;
 import com.project.project.repositories.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,13 +38,15 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/auth/*")
                         .permitAll()
+                        .requestMatchers("/admin/**")
+                        .hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
                 .formLogin(Customizer.withDefaults())
                 .httpBasic(Customizer.withDefaults())
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .authenticationProvider(authenticationProvider()) // ✅ THIS LINE IS MISSING
+                .authenticationProvider(authenticationProvider())
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
     }
@@ -66,7 +68,7 @@ public class SecurityConfig {
             return org.springframework.security.core.userdetails.User.builder()
                     .username(user.getUsername())
                     .password(user.getPassword())
-                    .roles("USER") // adjust role if needed
+                    .roles(user.getRole().name())
                     .build();
         };
     }

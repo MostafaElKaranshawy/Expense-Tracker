@@ -1,6 +1,6 @@
-package com.project.project.Models;
+package com.project.project.models;
 
-import com.project.project.Enums.Role;
+import com.project.project.enums.Role;
 import jakarta.persistence.*;
 
 @Entity
