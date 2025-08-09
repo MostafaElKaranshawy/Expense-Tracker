@@ -1,6 +1,7 @@
 package com.project.project.controllers;
 
 import com.project.project.DTOs.UserDTO;
+import com.project.project.exceptions.ExceptionsController;
 import com.project.project.models.User;
 import com.project.project.services.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,9 @@ public class AuthController {
     @Autowired
     private AuthService authService;
 
+    @Autowired
+    private ExceptionsController exceptionsController;
+
     @PostMapping("/auth/register")
     public ResponseEntity<?> register(@RequestBody User user) {
         try {
@@ -24,7 +28,7 @@ public class AuthController {
             return new ResponseEntity<>(registeredUser, HttpStatus.CREATED);
         }
         catch (Exception e) {
-            return  new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+            return exceptionsController.handleException(e, HttpStatus.BAD_REQUEST);
         }
     }
 
@@ -34,8 +38,8 @@ public class AuthController {
             UserDTO userDTO = authService.login(user.getUsername(), user.getPassword());
             return new ResponseEntity<>(userDTO, HttpStatus.OK);
         }
-        catch (Exception e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+        catch (IllegalArgumentException e) {
+            return exceptionsController.handleIllegalArgument(e, HttpStatus.NOT_FOUND);
         }
     }
 }

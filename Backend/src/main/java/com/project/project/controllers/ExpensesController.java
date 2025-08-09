@@ -3,6 +3,7 @@ package com.project.project.controllers;
 import com.project.project.DTOs.ExpenseDTO;
 import com.project.project.adapters.ExpensesAndDTOAdapter;
 import com.project.project.enums.Category;
+import com.project.project.exceptions.ExceptionsController;
 import com.project.project.models.Expense;
 import com.project.project.models.User;
 import com.project.project.repositories.UserRepo;
@@ -44,12 +45,20 @@ public class ExpensesController {
     @Autowired
     private ExpensesAndDTOAdapter expensesAdapter;
 
+    @Autowired
+    private ExceptionsController exceptionsController;
+
     @PostMapping
-    public ResponseEntity<ExpenseDTO> createExpense(@RequestBody Expense expense, HttpServletRequest request, Locale locale) {
-        User currentUser = jwtService.getAuthenticatedUser(request);
-        expense.setUser(currentUser);
-        Expense created = expensesService.createExpense(expense);
-        return ResponseEntity.status(HttpStatus.CREATED).body(expensesAdapter.toDTO(created));
+    public ResponseEntity<?> createExpense(@RequestBody Expense expense, HttpServletRequest request, Locale locale) {
+        try {
+            User currentUser = jwtService.getAuthenticatedUser(request);
+            expense.setUser(currentUser);
+            Expense created = expensesService.createExpense(expense);
+            return ResponseEntity.status(HttpStatus.CREATED).body(expensesAdapter.toDTO(created));
+        }
+        catch (Exception e) {
+            return exceptionsController.handleException(e, HttpStatus.BAD_REQUEST);
+        }
     }
 
     @GetMapping

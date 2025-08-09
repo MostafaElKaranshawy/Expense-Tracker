@@ -1,5 +1,6 @@
 package com.project.project.controllers;
 
+import com.project.project.exceptions.ExceptionsController;
 import com.project.project.models.User;
 import com.project.project.services.UserService;
 
@@ -24,26 +25,44 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private ExceptionsController exceptionsController;
+
     @GetMapping("/getUserById")
-    public ResponseEntity<User> getUserById(HttpServletRequest request) {
-        User user = userService.getUserById(request);
-        return new ResponseEntity<>(user, HttpStatus.OK);
+    public ResponseEntity<?> getUserById(HttpServletRequest request) {
+        try {
+            User user = userService.getUserById(request);
+            return new ResponseEntity<>(user, HttpStatus.OK);
+        }
+        catch (Exception e) {
+            return exceptionsController.handleException(e, HttpStatus.BAD_REQUEST);
+        }
     }
 
     @PutMapping("/updateUser")
-    public ResponseEntity<User> updateUser(@RequestBody User userDetails,
+    public ResponseEntity<?> updateUser(@RequestBody User userDetails,
                                            HttpServletRequest request) {
-        User updatedUser = userService.updateUser(userDetails, request);
-        return new ResponseEntity<>(updatedUser, HttpStatus.OK);
+        try {
+            User updatedUser = userService.updateUser(userDetails, request);
+            return new ResponseEntity<>(updatedUser, HttpStatus.OK);
+        }
+        catch (Exception e) {
+            return exceptionsController.handleException(e, HttpStatus.BAD_REQUEST);
+        }
     }
 
     @DeleteMapping("/deleteUser")
-    public ResponseEntity<Void> deleteUser(HttpServletRequest request) {
-        boolean isDeleted = userService.deleteUser(request);
-        if (isDeleted) {
-            return new ResponseEntity<>(HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    public ResponseEntity<?> deleteUser(HttpServletRequest request) {
+        try {
+            boolean isDeleted = userService.deleteUser(request);
+            if (isDeleted) {
+                return new ResponseEntity<>(HttpStatus.OK);
+            } else {
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+        }
+        catch (Exception e) {
+            return exceptionsController.handleException(e, HttpStatus.BAD_REQUEST);
         }
     }
 

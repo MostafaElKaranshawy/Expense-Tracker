@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53821c0b-e59a-48c2-8d66-07ca86515e1c" name="Changes" comment="feat:&#10;    - Added JWT Authentication&#10;    - Added Database Connection `JPA with JDBC:mysql driver`&#10;    - Add Project Structure" />
+    <list default="true" id="53821c0b-e59a-48c2-8d66-07ca86515e1c" name="Changes" comment="feat:&#10;    - Added JWT Authentication&#10;    - Added Database Connection `JPA with JDBC:mysql driver`&#10;    - Add Project Structure">
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/project/project/exceptions/ExceptionsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/.run/ProjectApplication.run.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/project/project/ProjectApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/project/project/config/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/project/project/controllers/AuthController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/project/project/filters/JwtFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/project/project/repositories/UserRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/project/project/services/AuthService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/project/project/services/JwtService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/project/project/services/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/test-classes/com/project/project/ProjectApplicationTests.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,6 +61,8 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/moka/Files/Summer25/Ejada/Expense-Tracker",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -52,19 +71,6 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="Expense-Tracker" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="Expense-Tracker" />
-      <option name="filePath" />
-      <method v="2" />
-    </configuration>
-  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -82,6 +88,7 @@
       <updated>1754340338863</updated>
       <workItem from="1754340340463" duration="433000" />
       <workItem from="1754473273565" duration="48000" />
+      <workItem from="1754779333421" duration="112000" />
     </task>
     <task id="LOCAL-00001" summary="feat:&#10;    - Added JWT Authentication&#10;    - Added Database Connection `JPA with JDBC:mysql driver`&#10;    - Add Project Structure">
       <option name="closed" value="true" />
