@@ -1,5 +1,6 @@
 package com.project.project.controllers;
 
+import com.project.project.exceptions.ExceptionsController;
 import com.project.project.models.Expense;
 import com.project.project.services.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,32 +25,57 @@ public class AdminController {
     @Autowired
     private AdminService adminService;
 
+    @Autowired
+    private ExceptionsController exceptionsController;
+
     @GetMapping("/expenses")
-    public ResponseEntity<Page<Expense>> getAllExpenses(
+    public ResponseEntity<?> getAllExpenses(
             @PageableDefault(sort = "dateTime", direction = Sort.Direction.DESC) Pageable pageable
     ) {
-        return ResponseEntity.ok(
-                adminService.getAllExpenses(pageable)
-        );
+        try {
+            return ResponseEntity.ok(
+                    adminService.getAllExpenses(pageable)
+            );
+        }
+        catch (Exception e) {
+            return exceptionsController.handleException(e, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @GetMapping("/expenses/{id}")
-    public ResponseEntity<Expense> getExpenseById(@PathVariable Long id) {
-        return ResponseEntity.ok(adminService.getExpenseById(id));
+    public ResponseEntity<?> getExpenseById(@PathVariable Long id) {
+        try {
+            return ResponseEntity.ok(adminService.getExpenseById(id));
+        } catch (Exception e) {
+            return exceptionsController.handleException(e, HttpStatus.NOT_FOUND);
+        }
     }
 
     @GetMapping("/stats/summary")
-    public ResponseEntity<Map<String, Object>> getSummaryStats() {
-        return ResponseEntity.ok(adminService.getSummaryStats());
+    public ResponseEntity<?> getSummaryStats() {
+        try {
+            return ResponseEntity.ok(adminService.getSummaryStats());
+        } catch (Exception e) {
+            return exceptionsController.handleException(e, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @GetMapping("/stats/category-breakdown")
-    public ResponseEntity<List<Object[]>> getCategoryBreakdown() {
-        return ResponseEntity.ok(adminService.getCategoryBreakdown());
+    public ResponseEntity<?> getCategoryBreakdown() {
+        try {
+            return ResponseEntity.ok(adminService.getCategoryBreakdown());
+        } catch (Exception e) {
+            return exceptionsController.handleException(e, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @GetMapping("/stats/user-activity")
-    public ResponseEntity<Map<String, Object>> getUserActivity() {
-        return ResponseEntity.ok(adminService.getUserActivity());
+    public ResponseEntity<?> getUserActivity() {
+        try {
+            return ResponseEntity.ok(adminService.getUserActivity());
+        }
+        catch (Exception e) {
+            return exceptionsController.handleException(e, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 }
