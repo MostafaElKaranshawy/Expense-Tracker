@@ -5,22 +5,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="53821c0b-e59a-48c2-8d66-07ca86515e1c" name="Changes" comment="feat:&#10;    - Added JWT Authentication&#10;    - Added Database Connection `JPA with JDBC:mysql driver`&#10;    - Add Project Structure">
-      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/project/project/exceptions/ExceptionsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/.run/ProjectApplication.run.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/project/project/ProjectApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/project/project/config/SecurityConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/project/project/controllers/AuthController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/project/project/filters/JwtFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/project/project/repositories/UserRepo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/project/project/services/AuthService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/project/project/services/JwtService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/project/project/services/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/test-classes/com/project/project/ProjectApplicationTests.class" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin-User-Service/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin-User-Service/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin-User-Service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin-User-Service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin-User-Service/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin-User-Service/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin-User-Service/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin-User-Service/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin-User-Service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin-User-Service/projectApplication.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin-User-Service/src/main/java/com/project/project/DTOs/ExpenseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin-User-Service/src/main/java/com/project/project/DTOs/UserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin-User-Service/src/main/java/com/project/project/ProjectApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin-User-Service/src/main/java/com/project/project/adapters/ExpensesAndDTOAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin-User-Service/src/main/java/com/project/project/config/LocaleResolverConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin-User-Service/src/main/java/com/project/project/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin-User-Service/src/main/java/com/project/project/controllers/AdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin-User-Service/src/main/java/com/project/project/controllers/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin-User-Service/src/main/java/com/project/project/controllers/ExpensesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin-User-Service/src/main/java/com/project/project/controllers/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin-User-Service/src/main/java/com/project/project/enums/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin-User-Service/src/main/java/com/project/project/enums/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin-User-Service/src/main/java/com/project/project/exceptions/ExceptionsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin-User-Service/src/main/java/com/project/project/filters/JwtFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin-User-Service/src/main/java/com/project/project/models/Expense.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin-User-Service/src/main/java/com/project/project/models/Token.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin-User-Service/src/main/java/com/project/project/models/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin-User-Service/src/main/java/com/project/project/repositories/ExpenseRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin-User-Service/src/main/java/com/project/project/repositories/UserRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin-User-Service/src/main/java/com/project/project/services/AdminService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin-User-Service/src/main/java/com/project/project/services/AuthService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin-User-Service/src/main/java/com/project/project/services/ExpensesService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin-User-Service/src/main/java/com/project/project/services/JwtService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin-User-Service/src/main/java/com/project/project/services/LocalizationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin-User-Service/src/main/java/com/project/project/services/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin-User-Service/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin-User-Service/src/main/resources/lang/messages.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin-User-Service/src/main/resources/lang/messages_ar.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin-User-Service/src/test/java/com/project/project/ProjectApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +53,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="ET-2-JWT-Authentication" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -61,7 +84,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "ET-17-Microservice-Admin-User-Service",
     "last_opened_file_path": "/home/moka/Files/Summer25/Ejada/Expense-Tracker",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -71,6 +94,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -89,6 +117,7 @@
       <workItem from="1754340340463" duration="433000" />
       <workItem from="1754473273565" duration="48000" />
       <workItem from="1754779333421" duration="112000" />
+      <workItem from="1755083662692" duration="167000" />
     </task>
     <task id="LOCAL-00001" summary="feat:&#10;    - Added JWT Authentication&#10;    - Added Database Connection `JPA with JDBC:mysql driver`&#10;    - Add Project Structure">
       <option name="closed" value="true" />
