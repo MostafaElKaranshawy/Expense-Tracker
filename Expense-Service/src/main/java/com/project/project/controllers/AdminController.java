@@ -51,10 +51,19 @@ public class AdminController {
         }
     }
 
-    @GetMapping("/stats/summary")
-    public ResponseEntity<?> getSummaryStats() {
+    @GetMapping("/stats/total-expenses")
+    public ResponseEntity<?> getTotalExpenses() {
         try {
-            return ResponseEntity.ok(adminService.getSummaryStats());
+            return ResponseEntity.ok(adminService.getTotalExpenses());
+        } catch (Exception e) {
+            return exceptionsController.handleException(e, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @GetMapping("/stats/top-categories")
+    public ResponseEntity<?> getTopCategories() {
+        try {
+            return ResponseEntity.ok(adminService.getTopCategories());
         } catch (Exception e) {
             return exceptionsController.handleException(e, HttpStatus.INTERNAL_SERVER_ERROR);
         }
@@ -69,10 +78,20 @@ public class AdminController {
         }
     }
 
-    @GetMapping("/stats/user-activity")
-    public ResponseEntity<?> getUserActivity() {
+    @GetMapping("/stats/most-active-users")
+    public ResponseEntity<?> getMostActiveUsers() {
         try {
-            return ResponseEntity.ok(adminService.getUserActivity());
+            return ResponseEntity.ok(adminService.getMostActiveUsers());
+        }
+        catch (Exception e) {
+            return exceptionsController.handleException(e, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @GetMapping("/stats/recent-submissions")
+    public ResponseEntity<?> getRecentSubmissions() {
+        try {
+            return ResponseEntity.ok(adminService.getRecentSubmissions());
         }
         catch (Exception e) {
             return exceptionsController.handleException(e, HttpStatus.INTERNAL_SERVER_ERROR);

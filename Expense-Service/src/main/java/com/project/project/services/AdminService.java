@@ -25,21 +25,23 @@ public class AdminService {
                 .orElseThrow(() -> new RuntimeException("Expense not found"));
     }
 
-    public Map<String, Object> getSummaryStats() {
-        Map<String, Object> stats = new HashMap<>();
-        stats.put("totalExpenses", expenseRepo.getTotalExpenses());
-        stats.put("topCategories", expenseRepo.getTopCategories());
-        return stats;
+    public Double getTotalExpenses() {
+        return expenseRepo.getTotalExpenses();
+    }
+
+    public List<Object[]> getTopCategories() {
+        return expenseRepo.getTopCategories();
     }
 
     public List<Object[]> getCategoryBreakdown() {
         return expenseRepo.getCategoryBreakdown();
     }
 
-    public Map<String, Object> getUserActivity() {
-        Map<String, Object> activity = new HashMap<>();
-        activity.put("mostActiveUsers", expenseRepo.getMostActiveUsers());
-        activity.put("recentSubmissions", expenseRepo.getRecentSubmissions());
-        return activity;
+    public List<Object[]> getMostActiveUsers() {
+        return expenseRepo.getMostActiveUsers();
+    }
+
+    public List<Expense> getRecentSubmissions() {
+        return expenseRepo.getRecentSubmissions();
     }
 }
