@@ -27,8 +27,8 @@ public class AuthController {
             User registeredUser = authService.register(user);
             return new ResponseEntity<>(registeredUser, HttpStatus.CREATED);
         }
-        catch (Exception e) {
-            return exceptionsController.handleException(e, HttpStatus.BAD_REQUEST);
+        catch (IllegalArgumentException e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
     }
 
@@ -39,7 +39,7 @@ public class AuthController {
             return new ResponseEntity<>(userDTO, HttpStatus.OK);
         }
         catch (IllegalArgumentException e) {
-            return exceptionsController.handleIllegalArgument(e, HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
     }
 }
