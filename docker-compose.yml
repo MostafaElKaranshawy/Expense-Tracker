@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   expense_tracker_db:
-    image: mysql:8.0
+    image: mysql
     container_name: expense_tracker_db
     restart: unless-stopped
     volumes:
@@ -10,23 +10,17 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: expense_tracker
-    networks:
-      - db_network
 
   eureka_server:
     build:
       context: ./eurekaServer/
       dockerfile: Dockerfile
     container_name: eureka_server
+    hostname: eureka-server
     env_file:
       - ./eurekaServer/.env
     ports:
       - "8761:8761"
-    depends_on:
-      - expense_tracker_db
-    networks:
-      - db_network
-      - eureka_network
 
   admin_user_service:
     build:
@@ -40,9 +34,6 @@ services:
     depends_on:
       - eureka_server
       - expense_tracker_db
-    networks:
-      - db_network
-      - eureka_network
 
   expense_service:
     build:
@@ -56,10 +47,3 @@ services:
     depends_on:
       - eureka_server
       - expense_tracker_db
-    networks:
-      - db_network
-      - eureka_network
-
-networks:
-  db_network:
-  eureka_network:

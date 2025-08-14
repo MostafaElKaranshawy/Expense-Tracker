@@ -5,59 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="53821c0b-e59a-48c2-8d66-07ca86515e1c" name="Changes" comment="feat:&#10;    - Added JWT Authentication&#10;    - Added Database Connection `JPA with JDBC:mysql driver`&#10;    - Add Project Structure">
-      <change afterPath="$PROJECT_DIR$/Admin-User-Service/adminUserService.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Expense-Service/expenseService.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eurekaServer/eurekaServer.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin-User-Service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Admin-User-Service/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin-User-Service/docker-compose.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin-User-Service/src/main/java/com/project/project/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Admin-User-Service/src/main/java/com/project/project/controllers/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/HELP.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/docker-compose.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/projectApplication.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/project/project/DTOs/ExpenseDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/project/project/DTOs/UserDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/project/project/ProjectApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/project/project/adapters/ExpensesAndDTOAdapter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/project/project/config/LocaleResolverConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/project/project/config/SecurityConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/project/project/controllers/AdminController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/project/project/controllers/AuthController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/project/project/controllers/ExpensesController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/project/project/controllers/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/project/project/enums/Category.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/project/project/enums/Role.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/project/project/exceptions/ExceptionsController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/project/project/filters/JwtFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/project/project/models/Expense.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/project/project/models/Token.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/project/project/models/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/project/project/repositories/ExpenseRepo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/project/project/repositories/UserRepo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/project/project/services/AdminService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/project/project/services/AuthService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/project/project/services/ExpensesService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/project/project/services/JwtService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/project/project/services/LocalizationService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/project/project/services/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/resources/lang/messages.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/resources/lang/messages_ar.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/project/project/ProjectApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Expense-Service/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Expense-Service/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,23 +43,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "ET-19-Microservices-Dockerization",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/moka/Files/Summer25/Ejada/Expense-Tracker",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;ET-19-Microservices-Dockerization&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/moka/Files/Summer25/Ejada/Expense-Tracker&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -154,6 +104,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat:&#10;    - Added JWT Authentication&#10;    - Added Database Connection `JPA with JDBC:mysql driver`&#10;    - Add Project Structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat:&#10;    - Added JWT Authentication&#10;    - Added Database Connection `JPA with JDBC:mysql driver`&#10;    - Add Project Structure" />
+    <MESSAGE value="Add Docker files for each server and dockercompose file for the whole Applications." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Docker files for each server and dockercompose file for the whole Applications." />
   </component>
 </project>
