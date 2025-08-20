@@ -1,6 +1,5 @@
 # Expense-Tracker
-Expense Tracker Java Application
-
+Expense Tracker Application, built in Spring boot Java with applying different concepts as Security using Auth and Spring security filters, use microservices architecture for scalability and enhancement of performance, dockerize the project and connect servers internally with docker network. 
 
 ## How to Run
 
